@@ -2,29 +2,32 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SelectedLight : MonoBehaviour
+//script responsible for selecting the objects we look at
+public class PlayerSelect: MonoBehaviour
 {
+    //currently selected gameobject
+    [System.NonSerialized]
     public GameObject selectedObject;
-    ObjectCast cast;
+    //check if we are currently lighting up any objects
+    [System.NonSerialized]
     public bool isLit;
+    PlayerMain main;
     private void Start()
     {
-        cast = GetComponent<ObjectCast>();
+        main = GetComponent<PlayerMain>();
     }
 
     private void Update()
     {
-        if(cast.selectedObjectTransform != null && cast.selectedObjectTransform != selectedObject)
+        //if we are looking at a new object, light it up
+        if(main.Cast.selectedObjectTransform != null && main.Cast.selectedObjectTransform != selectedObject)
         {
-            Debug.Log("yay");
-            LightUpObject(cast.selectedObjectTransform.gameObject);
-        }
-        else if(isLit && cast.selectedObjectTransform != selectedObject)
-        {
-           UnlightObject(selectedObject);
+            if(selectedObject != null)
+                UnlightObject(selectedObject);
+            LightUpObject(main.Cast.selectedObjectTransform.gameObject);
         }
     }
-
+    //call the Lit function of the current target object
     void LightUpObject(GameObject obj)
     {
         if (obj == null)
@@ -32,12 +35,12 @@ public class SelectedLight : MonoBehaviour
         ObjectSelectable select = obj.GetComponent<ObjectSelectable>();
         if (select != null && !select.isLit)
         {
-            selectedObject = cast.selectedObjectTransform.gameObject;
+            selectedObject = obj;
             select.Lit();
             isLit = true;
         }   
     }
-
+    //call the Unlit function of the previous target object
     void UnlightObject(GameObject obj)
     {
         if (obj == null)

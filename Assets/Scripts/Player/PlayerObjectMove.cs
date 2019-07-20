@@ -4,20 +4,20 @@ using UnityEngine;
 
 public class PlayerObjectMove : MonoBehaviour
 {
-    SelectedLight lit;
+    PlayerSelect select;
     bool isMoving;
     GameObject movingObject;
     [SerializeField] Transform lookAtTransform, holdReferenceTransform;
     private void Start()
     {
-        lit = GetComponent<SelectedLight>();
+        select = GetComponent<PlayerSelect>();
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0) && lit.isLit && movingObject == false)
+        if (Input.GetKeyDown(KeyCode.Mouse0) && select.isLit && movingObject == false)
         {
-            movingObject = lit.selectedObject;
+            movingObject = select.selectedObject;
             movingObject.GetComponent<ObjectMovable>().isMoving = true; 
             isMoving = true;
         }
