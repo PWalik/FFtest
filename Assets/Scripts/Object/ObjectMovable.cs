@@ -9,7 +9,7 @@ public class ObjectMovable : MonoBehaviour
     Quaternion startRotation;
     Vector3 startPosition;
     //check if we are currently moving the object
-    public bool isMoving;
+    [System.NonSerialized] public bool isMoving;
     private void Start()
     {
         startRotation = transform.rotation;

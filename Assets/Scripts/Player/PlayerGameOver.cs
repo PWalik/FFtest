@@ -9,11 +9,12 @@ public class PlayerGameOver : MonoBehaviour
     //starting position and rotation of the player (so it can be reset if he loses a life
     Vector3 position;
     Quaternion rotation;
-
+    GameControl control;
     private void Start()
     {
         position = transform.position;
         rotation = transform.rotation;
+        control = FindObjectOfType<GameControl>();
     }
 
     //called out everytime we should lose a life (so when we open the door without checking it, if we shoot with a wrong value or if we open the door after shooting without checking it first)
@@ -48,7 +49,7 @@ public class PlayerGameOver : MonoBehaviour
     //after winning stage 2, go into stage 3 (score summary) with all the data about mistakes/time/etc
     public void Win()
     {
-        GameOver();
+        control.Win();
     }
 
     //what happens when you get to 0 lives. Right now it stops the application, but in the real program it will prob lead to a game over screen/different scene

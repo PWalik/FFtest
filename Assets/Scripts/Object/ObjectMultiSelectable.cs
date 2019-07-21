@@ -1,29 +1,24 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//script for the objects that can be selected by looking at them
-public class ObjectSelectable : MonoBehaviour
+
+public class ObjectMultiSelectable : MonoBehaviour
 {
-    //check if the object is currently lit up
-    bool isLit = false;
-    //two materials to swap when the object is lit and not
+    [SerializeField] Renderer[] componentRenderers;
     [SerializeField] Material litMaterial, unlitMaterial;
+    bool isLit;
 
     public bool IsLit { get => isLit; }
 
-    private void Start()
-    {
-        GetComponent<Renderer>().material = unlitMaterial;
-    }
-    //change the material to lit 
+    //change material to lit
     public void Lit()
     {
         if (GetComponent<ObjectMovable>() != null && GetComponent<ObjectMovable>().isMoving)
             return;
 
-        if(!isLit)
+        if (!isLit)
         {
-            GetComponent<Renderer>().material = litMaterial;
+            AssignMaterial(litMaterial);
             isLit = true;
         }
     }
@@ -32,8 +27,17 @@ public class ObjectSelectable : MonoBehaviour
     {
         if (isLit)
         {
-            GetComponent<Renderer>().material = unlitMaterial;
+            AssignMaterial(unlitMaterial);
             isLit = false;
+        }
+    }
+
+
+    void AssignMaterial(Material material)
+    {
+        for (int i = 0; i < componentRenderers.Length; i++)
+        {
+            componentRenderers[i].material = material;
         }
     }
 }

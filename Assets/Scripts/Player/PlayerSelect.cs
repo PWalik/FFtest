@@ -11,20 +11,20 @@ public class PlayerSelect: MonoBehaviour
     //check if we are currently lighting up any objects
     [System.NonSerialized]
     public bool isLit;
-    PlayerMain main;
+    PlayerCast cast;
     private void Start()
     {
-        main = GetComponent<PlayerMain>();
+        cast = GetComponent<PlayerCast>();
     }
 
     private void Update()
     {
         //if we are looking at a new object, light it up
-        if(main.Cast.selectedObjectTransform != null && main.Cast.selectedObjectTransform != selectedObject)
+        if(cast.SelectedObjectTransform != null && cast.SelectedObjectTransform != selectedObject)
         {
             if(selectedObject != null)
                 UnlightObject(selectedObject);
-            LightUpObject(main.Cast.selectedObjectTransform.gameObject);
+            LightUpObject(cast.SelectedObjectTransform.gameObject);
         }
     }
     //call the Lit function of the current target object
@@ -33,11 +33,22 @@ public class PlayerSelect: MonoBehaviour
         if (obj == null)
             return;
         ObjectSelectable select = obj.GetComponent<ObjectSelectable>();
-        if (select != null && !select.isLit)
+        ObjectMultiSelectable multi = obj.GetComponent<ObjectMultiSelectable>();
+
+        if (multi != null && !multi.IsLit)
+        {
+            selectedObject = obj;
+            multi.Lit();
+            isLit = true;
+            return;
+        }
+
+        if (select != null && !select.IsLit)
         {
             selectedObject = obj;
             select.Lit();
             isLit = true;
+            return;
         }   
     }
     //call the Unlit function of the previous target object
@@ -47,11 +58,21 @@ public class PlayerSelect: MonoBehaviour
             return;
 
         ObjectSelectable select = obj.GetComponent<ObjectSelectable>();
-        if (select != null && select.isLit)
+        ObjectMultiSelectable multi = obj.GetComponent<ObjectMultiSelectable>();
+
+        if (multi != null && multi.IsLit)
+        {
+            multi.Unlit();
+            selectedObject = null;
+            isLit = false;
+            return;
+        }
+        if (select != null && select.IsLit)
         {
             select.Unlit();
             selectedObject = null;
             isLit = false;
+            return;
         }
     }
 }
