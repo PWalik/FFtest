@@ -15,6 +15,7 @@ public class ObjectMovable : MonoBehaviour
         startRotation = transform.rotation;
         startPosition = transform.position;
     }
+    //reset the placement of the object
     public void ResetPlacement()
     {
         transform.rotation = startRotation;

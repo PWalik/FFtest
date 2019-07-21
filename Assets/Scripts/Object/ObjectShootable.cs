@@ -9,6 +9,10 @@ public class ObjectShootable : MonoBehaviour
     int timesShot = 0;
     int timesShotWithWrong = 0;
     ObjectScannable scan;
+
+    public int TimesShot { get => timesShot; }
+    public int TimesShotWithWrong { get => timesShotWithWrong; }
+
     private void Start()
     {
         scan = GetComponent<ObjectScannable>();
@@ -18,6 +22,7 @@ public class ObjectShootable : MonoBehaviour
     public void Shoot(int ringNumber)
     {
         timesShot++;
+        //if we shot with the wrong ring number, count it as an error
         if (scan != null && scan.number != ringNumber)
             timesShotWithWrong++;
     }

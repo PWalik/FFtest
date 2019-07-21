@@ -51,7 +51,7 @@ public class PlayerSelect: MonoBehaviour
             return;
         }   
     }
-    //call the Unlit function of the previous target object
+    //call the Unlit function of the target object
     void UnlightObject(GameObject obj)
     {
         if (obj == null)
@@ -60,19 +60,14 @@ public class PlayerSelect: MonoBehaviour
         ObjectSelectable select = obj.GetComponent<ObjectSelectable>();
         ObjectMultiSelectable multi = obj.GetComponent<ObjectMultiSelectable>();
 
+        //if it's an object made of multiple parts
         if (multi != null && multi.IsLit)
-        {
             multi.Unlit();
-            selectedObject = null;
-            isLit = false;
-            return;
-        }
-        if (select != null && select.IsLit)
-        {
+        //if it's not
+        else if (select != null && select.IsLit)
             select.Unlit();
-            selectedObject = null;
-            isLit = false;
-            return;
-        }
+
+        selectedObject = null;
+        isLit = false;
     }
 }

@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//script responsible for the tip of the laser following the mouse in stage 1
 public class FollowMouse : MonoBehaviour
 {
     [SerializeField] float mouseSensitivity;

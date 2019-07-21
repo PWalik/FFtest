@@ -195,7 +195,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   number: 0
   minNumber: 1
-  maxNumber: 9
+  maxNumber: 10
 --- !u!114 &14333444
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -278,7 +278,6 @@ GameObject:
   m_Component:
   - component: {fileID: 33482556}
   - component: {fileID: 33482554}
-  - component: {fileID: 33482555}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -329,14 +328,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &33482555
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 33482553}
-  m_Enabled: 1
 --- !u!4 &33482556
 Transform:
   m_ObjectHideFlags: 0
@@ -1266,7 +1257,6 @@ GameObject:
   m_Component:
   - component: {fileID: 364189785}
   - component: {fileID: 364189783}
-  - component: {fileID: 364189784}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -1317,14 +1307,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &364189784
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 364189782}
-  m_Enabled: 1
 --- !u!4 &364189785
 Transform:
   m_ObjectHideFlags: 0
@@ -5226,7 +5208,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   number: 0
   minNumber: 1
-  maxNumber: 9
+  maxNumber: 10
 --- !u!114 &1295234844
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5309,7 +5291,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1298280600}
   - component: {fileID: 1298280598}
-  - component: {fileID: 1298280599}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -5360,14 +5341,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &1298280599
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1298280597}
-  m_Enabled: 1
 --- !u!4 &1298280600
 Transform:
   m_ObjectHideFlags: 0
@@ -5685,7 +5658,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1390986312}
   - component: {fileID: 1390986310}
-  - component: {fileID: 1390986311}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -5736,14 +5708,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &1390986311
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1390986309}
-  m_Enabled: 1
 --- !u!4 &1390986312
 Transform:
   m_ObjectHideFlags: 0
@@ -6875,7 +6839,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   number: 0
   minNumber: 1
-  maxNumber: 9
+  maxNumber: 10
 --- !u!114 &1578794585
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7725,6 +7689,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1806013559}
   - component: {fileID: 1806013558}
+  - component: {fileID: 1806013560}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -7759,6 +7724,43 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1806013560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1806013557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: deb9454c766c0964ba43402b6b88be84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shootables:
+  - {fileID: 141383926}
+  - {fileID: 845868965}
+  - {fileID: 1586460483}
+  - {fileID: 2111894798}
+  - {fileID: 423636368}
+  - {fileID: 2119176223}
+  - {fileID: 780336681}
+  - {fileID: 753555867}
+  - {fileID: 139140664}
+  - {fileID: 1499056478}
+  - {fileID: 2085371956}
+  - {fileID: 1444916087}
+  - {fileID: 2064966672}
+  - {fileID: 1105808059}
+  - {fileID: 1293676578}
+  - {fileID: 1432055795}
+  - {fileID: 448908826}
+  - {fileID: 1188214040}
+  - {fileID: 1654954468}
+  - {fileID: 1600142180}
+  - {fileID: 190042977}
+  - {fileID: 1461136037}
+  - {fileID: 139006162}
+  - {fileID: 1027924688}
 --- !u!1 &1818188524
 GameObject:
   m_ObjectHideFlags: 0
@@ -8391,7 +8393,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   number: 0
   minNumber: 1
-  maxNumber: 9
+  maxNumber: 10
 --- !u!114 &2007027789
 MonoBehaviour:
   m_ObjectHideFlags: 0

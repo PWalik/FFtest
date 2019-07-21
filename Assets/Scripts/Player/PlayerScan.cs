@@ -42,12 +42,14 @@ public class PlayerScan : MonoBehaviour
         }
     }
 
+    //turn on the scan
     void ScanOn()
     {
         scanningObject = select.selectedObject;
         scan = scanningObject.GetComponent<ObjectScannable>();
         if (scan == null)
             return;
+        //if it's a door, check if we scanned it before and after neutralisation
         ObjectDoor door = scanningObject.GetComponent<ObjectDoor>();
         if(door != null)
         {
@@ -57,9 +59,12 @@ public class PlayerScan : MonoBehaviour
                 door.isScannedAfterNeutralise = true;
         }
         isScanning = true;
+        //get the scanning readout on the scanner screen
         UpdateUIText(scan.number.ToString());
+        //start a coroutine that keeps the scan readout up on the screen for readingsTimer seconds
         timerCoroutine = StartCoroutine(CountDown(readingsTimer));
 
+        //if we have audio components, play the scanning sound
         if (scanSound != null && audios != null)
         {
             audios.clip = scanSound;
@@ -67,12 +72,14 @@ public class PlayerScan : MonoBehaviour
         }
     }
 
+
+    //turn off the scan
     public void TurnOff()
     {
         ScanOff();
     }
 
-
+    //what happens when we turn off the scan
     void ScanOff()
     {
         isScanning = false;
@@ -86,11 +93,10 @@ public class PlayerScan : MonoBehaviour
         }
     }
 
-
+    //count down, after which turn off the scan
     IEnumerator CountDown(float time)
     {
         float timer = 0f;
-        Debug.Log("test");
         while(timer < time)
         {
             timer += Time.deltaTime;
@@ -98,6 +104,7 @@ public class PlayerScan : MonoBehaviour
         }
         ScanOff();
     }
+    //update the UI text of the scan readout from string
     void UpdateUIText(string text)
     {
         numberUI.text = text;

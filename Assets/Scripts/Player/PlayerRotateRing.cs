@@ -33,6 +33,7 @@ public class PlayerRotateRing : MonoBehaviour
     }
 
 
+    //get the text of the current ring rotation to the screen on the object
     void AssignTextToScreens(int number)
     {
         AssignTextToOneScreen(ringUITextLeft, number - 1);
@@ -40,6 +41,7 @@ public class PlayerRotateRing : MonoBehaviour
         AssignTextToOneScreen(ringUITextRight, number + 1);
     }
 
+    //assign text to one of the screens
     void AssignTextToOneScreen(Text text, int number)
     {
         if (number > 9)

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//Player script responsible for opening doors (either the exit door ending stage 2, or scannable doors to the rooms)
 public class PlayerOpen : MonoBehaviour
 {
     PlayerMain main;

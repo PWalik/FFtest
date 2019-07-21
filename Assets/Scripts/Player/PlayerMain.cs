@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//Player script responsible for simplifying the references across different classes. Holds the reference to every needed class on the player object in stage 2.
 public class PlayerMain : MonoBehaviour
 {
     PlayerRotateRing ring;

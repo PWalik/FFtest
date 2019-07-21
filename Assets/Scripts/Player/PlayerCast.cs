@@ -16,7 +16,7 @@ public class PlayerCast : MonoBehaviour
     public Transform SelectedObjectTransform { get => selectedObjectTransform; }
     public Vector3 Point { get => point; }
 
-    // Update is called once per frame
+    //Shoot a raycast in update looking for an object. If we find it, save the reference to the object we hit and the point we did it at. If not, set it to null
     void Update()
     {
         if (Physics.Raycast(lookingTransform.position, lookingTransform.TransformDirection(Vector3.forward), out objectCast))

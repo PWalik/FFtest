@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//Player script responsible for drawing the laser in stage 1. Draws from the startPoint, to the position we are raycasting in PlayerCast
 public class PlayerDrawLaser : MonoBehaviour
 {
     [SerializeField] Transform startPoint;

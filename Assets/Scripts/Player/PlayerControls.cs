@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//Player script responsible for simplifying the controls in stage 2. Calls different scripts depending on the input 
 public class PlayerControls : MonoBehaviour
 {
     PlayerMain main;

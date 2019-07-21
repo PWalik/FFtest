@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//Player script responsible for the gameOver state in stage 2 and losing lives
 public class PlayerGameOver : MonoBehaviour
 {
     //current lives value - if it falls to 0, we lose

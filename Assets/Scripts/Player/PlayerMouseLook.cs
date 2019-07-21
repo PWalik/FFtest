@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//Player script responsible for looking around with the mouse
 public class PlayerMouseLook : MonoBehaviour
 {
     //field for mouse sensitivity
