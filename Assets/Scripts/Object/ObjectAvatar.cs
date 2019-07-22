@@ -23,7 +23,7 @@ public class ObjectAvatar : MonoBehaviour
     public void GearActivated(int id)
     {
         if (IsFullyClothed())
-            control.Win();
+            control.Win(0);
     }
 
     //checks if we have all the clothes on the avatar

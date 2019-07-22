@@ -3798,6 +3798,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0051c6862c94f7e408806f74177e22ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxLives: 3
 --- !u!114 &888912593
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5640,7 +5641,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1370220870}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.3, y: -0.39, z: 0.7}
+  m_LocalPosition: {x: 0.2, y: -0.39, z: 0.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1971116686}
@@ -7737,30 +7738,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shootables:
-  - {fileID: 141383926}
-  - {fileID: 845868965}
-  - {fileID: 1586460483}
-  - {fileID: 2111894798}
-  - {fileID: 423636368}
-  - {fileID: 2119176223}
-  - {fileID: 780336681}
-  - {fileID: 753555867}
-  - {fileID: 139140664}
-  - {fileID: 1499056478}
-  - {fileID: 2085371956}
-  - {fileID: 1444916087}
-  - {fileID: 2064966672}
-  - {fileID: 1105808059}
-  - {fileID: 1293676578}
-  - {fileID: 1432055795}
-  - {fileID: 448908826}
-  - {fileID: 1188214040}
-  - {fileID: 1654954468}
-  - {fileID: 1600142180}
-  - {fileID: 190042977}
-  - {fileID: 1461136037}
-  - {fileID: 139006162}
-  - {fileID: 1027924688}
+  - roomShootable:
+    - {fileID: 141383926}
+    - {fileID: 845868965}
+    - {fileID: 1586460483}
+    - {fileID: 2111894798}
+    - {fileID: 423636368}
+    - {fileID: 2119176223}
+  - roomShootable:
+    - {fileID: 780336681}
+    - {fileID: 753555867}
+    - {fileID: 139140664}
+    - {fileID: 1499056478}
+    - {fileID: 2085371956}
+    - {fileID: 1444916087}
+  - roomShootable:
+    - {fileID: 2064966672}
+    - {fileID: 1105808059}
+    - {fileID: 1293676578}
+    - {fileID: 1432055795}
+    - {fileID: 448908826}
+    - {fileID: 1188214040}
+  - roomShootable:
+    - {fileID: 1654954468}
+    - {fileID: 1600142180}
+    - {fileID: 190042977}
+    - {fileID: 1461136037}
+    - {fileID: 139006162}
+    - {fileID: 1027924688}
 --- !u!1 &1818188524
 GameObject:
   m_ObjectHideFlags: 0
@@ -8502,7 +8507,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2018557459}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.3, y: -0.39, z: 0.7}
+  m_LocalPosition: {x: -0.2, y: -0.39, z: 0.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2144170207}

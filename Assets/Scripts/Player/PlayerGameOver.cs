@@ -6,6 +6,7 @@ public class PlayerGameOver : MonoBehaviour
 {
     //current lives value - if it falls to 0, we lose
     int lives = 3;
+    [SerializeField] int maxLives;
     //starting position and rotation of the player (so it can be reset if he loses a life
     Vector3 position;
     Quaternion rotation;
@@ -14,6 +15,7 @@ public class PlayerGameOver : MonoBehaviour
     {
         position = transform.position;
         rotation = transform.rotation;
+        lives = maxLives;
         control = FindObjectOfType<GameControl>();
     }
 
@@ -49,16 +51,12 @@ public class PlayerGameOver : MonoBehaviour
     //after winning stage 2, go into stage 3 (score summary) with all the data about mistakes/time/etc
     public void Win()
     {
-        control.Win();
+        control.Win(maxLives - lives);
     }
 
-    //what happens when you get to 0 lives. Right now it stops the application, but in the real program it will prob lead to a game over screen/different scene
+    //what happens when we get to 0 lives. Right now just go to final score
     void GameOver()
     {
-#if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
-#else
-         Application.Quit();
-#endif
+        control.Win(maxLives - lives);
     }
 }

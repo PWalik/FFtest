@@ -25,11 +25,12 @@ public class GameControl : MonoBehaviour
 
     }
     //what happens once we complete all the win requirements
-    public void Win()
+    public void Win(int lives)
     {
         isTimer = false;
         isWin = true;
-        if(spaceText != null)
+        FindObjectOfType<KeepScore>().SaveLives(lives);
+        if (spaceText != null)
         spaceText.SetActive(true);
     }
     //after we win and press space, go to the next stage (saving the score)

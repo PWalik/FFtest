@@ -8,11 +8,19 @@ public class KeepScore : MonoBehaviour
     //time it took the player to complete stages 1 and 2
     [System.NonSerialized] float stage1time, stage2time;
     //how many lives the player lost, how many walls did he miss, how many did he shoot to many times, and how many with a wrong rotation setting
-    [System.NonSerialized] int livesLost, wallsMissed, wallsShotMultiple, wallsShotWithWrong;
+    [System.NonSerialized] int livesLost, wallsMissed, wallsShotMultiple, wallsShotWithWrong, perfectRoomsDone;
     //check so we know if we should take stage1 or stage 2 information
     bool isStageOne = true;
 
+    //getters for the last stage, when we calculate the final score
     public bool IsStageOne { get => isStageOne; }
+    public float Stage1time { get => stage1time; }
+    public float Stage2time { get => stage2time;  }
+    public int LivesLost { get => livesLost;  }
+    public int WallsMissed { get => wallsMissed;  }
+    public int WallsShotMultiple { get => wallsShotMultiple; }
+    public int WallsShotWithWrong { get => wallsShotWithWrong; }
+    public int PerfectRoomsDone { get => perfectRoomsDone; }
 
     private void Awake()
     {
@@ -37,10 +45,11 @@ public class KeepScore : MonoBehaviour
     }
 
     //save the errors we made during stage 2
-    public void SaveErrorScores(int missed, int multiple, int wrong)
+    public void SaveErrorScores(int missed, int multiple, int wrong, int perfect)
     {
         wallsMissed = missed;
         wallsShotMultiple = multiple;
         wallsShotWithWrong = wrong;
+        perfectRoomsDone = perfect;
     }
 }
